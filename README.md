@@ -4,8 +4,8 @@
 ---
 
 ### 💫 About Me  
-I'm a passionate developer who thrives at the intersection of **Artificial Intelligence, Computer Vision, and Full-Stack Development**.  
-Currently, I’m building an **autonomous drone system** capable of operating without human intervention — integrating **AI, Robotics, and Real-Time Image Processing**.  
+I'm a passionate developer who thrives at the intersection of **Artificial Intelligence, Computer Vision and Full-Stack Development**.  
+Currently, I’m building an **autonomous drone system** capable of operating without human intervention — integrating **AI, Robotics and Real-Time Image Processing**.  
 
 I’m also exploring the world of **web technologies** to design **scalable AI-integrated web applications**, aiming to bridge the gap between intelligent systems and everyday usability.  
 
