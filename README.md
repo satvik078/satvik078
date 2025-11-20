@@ -80,17 +80,6 @@ I also explore **modern web technologies** to build scalable platforms that inte
 
 ---
 
-### 🔥 Pinned Projects
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=satvik078&repo=face_recognition&theme=tokyonight)](https://github.com/satvik078/face_recognition)
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=satvik078&repo=Automatic-number-plate-detection-system&theme=tokyonight)](https://github.com/satvik078/Automatic-number-plate-detection-system)
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=satvik078&repo=ChitraArtist&theme=tokyonight)](https://github.com/satvik078/ChitraArtist)
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=satvik078&repo=college_notes&theme=tokyonight)](https://github.com/satvik078/website)
-
-
 ### 📊 GitHub Stats  
 
 ![](https://github-readme-stats.vercel.app/api?username=satvik078&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true)
