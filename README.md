@@ -1,107 +1,132 @@
+<!-- ================= HEADER ================= -->
+
 <h1 align="center">Hi 👋, I'm Satvik Pandey</h1>
-<h3 align="center">Computer Science Engineering Student | AI & Robotics Enthusiast</h3>
+
+<h3 align="center">
+AI & Robotics Enthusiast | Computer Vision Developer | Building Autonomous Intelligent SystemsArtificial Intelligence Engineer | Full Stack Developer
+</h3>
+
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,100:6A00FF&height=180&section=header&text=Engineering%20Intelligent%20Systems&fontSize=34&fontColor=ffffff&animation=fadeIn"/>
+</p>
+
+<p align="center">
+<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=28&duration=2800&color=00F7FF&center=true&vCenter=true&width=900&lines=Autonomous+Drone+Researcher;Machine+Learning+Engineer;Computer+Vision+Developer;Full+Stack+AI+Builder;Creating+Technology+For+Real+World+Impact"/>
+</p>
 
 ---
 
-### 💫 About Me  
-I'm a passionate developer focused on merging **Artificial Intelligence, Computer Vision and Full-Stack Engineering**.  
-Currently, I'm building an **autonomous drone system** capable of operating in complex environments without human intervention — combining **AI, Robotics and Real-Time Image Processing**.
+## 🧠 About Me
 
-I also explore **modern web technologies** to build scalable platforms that integrate AI-driven decision-making and interactive user experiences.
-
-> “Building intelligent solutions today that power the autonomy of tomorrow.”
-
----
-
-### 🧠 Skills & Tools  
-
-#### **Programming Languages**
-![Python](https://img.shields.io/badge/Python-3670A0?style=flat&logo=python&logoColor=ffdd54)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat&logo=cplusplus&logoColor=white)
-![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=flat&logo=java&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
-
-#### **Frameworks & Libraries**
-![React](https://img.shields.io/badge/React-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)
-![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-593D88?style=flat-square&logo=redux&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-%23white.svg?style=flat&logo=opencv&logoColor=black)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=flat&logo=TensorFlow&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=flat&logo=scikit-learn&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20.svg?style=flat&logo=django&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC.svg?style=flat&logo=tailwindcss&logoColor=white)
-
-#### **Backend & Databases**
-![NodeJS](https://img.shields.io/badge/Node.js-6DA55F?style=flat&logo=node.js&logoColor=white)
-![ExpressJS](https://img.shields.io/badge/Express.js-%23404d59.svg?style=flat&logo=express&logoColor=%2361DAFB)
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1.svg?style=flat&logo=mysql&logoColor=white)
-
-#### **Tools & Technologies**
-![Git](https://img.shields.io/badge/Git-%23F05033.svg?style=flat&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=flat&logo=github&logoColor=white)
-![PowerBI](https://img.shields.io/badge/PowerBI-F2C811?style=flat&logo=power-bi&logoColor=black)
-![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=flat&logo=anaconda&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-%23F24E1E.svg?style=flat&logo=figma&logoColor=white)
-![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=flat&logo=Canva&logoColor=white)
+🎓 B.Tech Computer Science Engineering Student  
+🤖 Passionate about **Artificial Intelligence, Robotics and Intelligent Automation**  
+🛰️ Currently developing **Fine Tunning the LLM Models and making Expert Systems**  
+🌐 Building scalable **AI-Integrated Full Stack Applications**  
+🎯 Career Goal → Become an **AI/ML Systems Engineer solving real-world problems**
 
 ---
 
-### 🚀 Featured Projects  
+## 🔬 Research & Technical Interests
 
-🔹 **Autonomous Aerial Drone System (Ongoing)**  
-*ROS2-based drone system performing autonomous navigation and animal detection using AI, LiDAR data and computer vision.*  
-**Tech Stack:** Python, ROS2, OpenCV, Gazebo Ignition  
-
-🔹 **Face Recognition System Using OpenCV**  
-*Real-time face detection & recognition system with optimized processing for attendance and verification use cases.*  
-**Tech Stack:** Python, OpenCV, NumPy, face_recognition  
-[🔗 Repository](https://github.com/satvik078/face_recognition)
-
-🔹 **Automatic Number Plate Recognition (ANPR)**  
-*Real-time number plate detection + OCR for Indian plates including HSRP format, with optional speed detection.*  
-**Tech Stack:** Python, OpenCV, pytesseract, NumPy  
-[🔗 Repository](https://github.com/satvik078/Automatic-number-plate-detection-system)
-
-🔹 **ChitraArtist – Portfolio Website for Artists**  
-*Modern full-stack platform allowing artists to upload, manage and showcase their artwork online.*  
-**Tech Stack:** React, TailwindCSS, JavaScript, NodeJs, ExpressJS, MongoDB 
-[🔗 Repository](https://github.com/satvik078/ChitraArtist)
-[🔗 Website](https://chitra-artist.vercel.app/)
-
-🔹 **College Notes Distribution Website**  
-*A full-stack Django-based platform for notes, quizzes and academic resource sharing.*  
-**Tech Stack:** Django, MySQL, HTML, CSS, Bootstrap  
-[🔗 Repository](https://github.com/satvik078/website)
-[🔗 Website](https://postmaker.wuaze.com/?i=1)
-
-🔹 **More Projects Coming Soon...**  
-> AI + Robotics + Full-Stack builds in progress 🚀  
+- Autonomous Navigation & Robotics  
+- Real-Time Object Detection & Tracking  
+- Computer Vision for Surveillance & Smart Systems  
+- Edge AI & Embedded Intelligence  
+- Intelligent Web Platforms powered by Machine Learning  
 
 ---
 
-### 📊 GitHub Stats  
+## 🧰 Tech Stack
 
-![](https://github-readme-stats.vercel.app/api?username=satvik078&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true)
-![](https://github-readme-streak-stats.herokuapp.com/?user=satvik078&theme=tokyonight&hide_border=false)
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=satvik078&theme=tokyonight&hide_border=false&layout=compact)
-
----
-
-### 🌐 Connect with Me  
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/satvik-pandey-1b57aa2b3)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/Satvik_Pandey_10_02)
-[![Medium](https://img.shields.io/badge/Medium-12100E?logo=medium&logoColor=white)](https://medium.com/@Satvikpandey)
-[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@Satvik.Postmaker)
-[![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:satvikpandey078@gmail.com)
+<p align="center">
+<img src="https://skillicons.dev/icons?i=python,cpp,java,js,react,redux,nodejs,express,mongodb,django,mysql,opencv,tensorflow,pytorch,git,github,tailwind,figma,powerbi,docker,kubernetes&perline=9"/>
+</p>
 
 ---
 
-### ✨ Quote I Live By  
-> “The future belongs to those who blend intelligence with imagination.”  
-> — *Satvik Pandey*
+## 🚀 Flagship Projects
+
+### 🛰️ Autonomous Drone Intelligence System  
+Developing an AI-powered autonomous drone capable of navigation, obstacle avoidance and real-time animal detection using LiDAR data and computer vision algorithms.  
+**Impact:** Enables smart surveillance and rescue operations in human-inaccessible environments.  
+**Tech:** Python • ROS2 • OpenCV • Unity3D • C# • MERN Stack  
 
 ---
 
-[![](https://visitcount.itsvg.in/api?id=satvik078&label=Profile%20Views&icon=0&color=4)](https://visitcount.itsvg.in)
+### 😀 Face Recognition & Smart Attendance System  
+Designed a high-accuracy real-time facial recognition pipeline for automated identity verification and attendance tracking.  
+**Highlights:** Optimized frame processing, scalable dataset integration and improved recognition performance.  
+🔗 Repo → https://github.com/satvik078/face_recognition  
+
+---
+
+### 🚗 Automatic Number Plate Recognition (ANPR)  
+Built a robust vehicle monitoring system capable of detecting number plates and extracting text using OCR — adaptable to Indian HSRP formats.  
+**Applications:** Smart traffic analytics, parking automation and security logging.  
+🔗 Repo → https://github.com/satvik078/Automatic-number-plate-detection-system  
+
+---
+
+### 🎨 ChitraArtist – Artist Portfolio Platform  
+Developed a full-stack web platform allowing artists to showcase digital artwork, manage portfolios and connect globally.  
+**Focus:** UI aesthetics, scalable backend and interactive user experience.  
+🔗 Repo → https://github.com/satvik078/ChitraArtist  
+
+---
+
+### 📚 Academic Resource Distribution Platform  
+Created a centralized academic portal for engineering students enabling note sharing, quiz hosting and assignment collaboration.  
+**Goal:** Improve learning accessibility and student productivity.  
+🔗 Live → https://postmaker.wuaze.com/?i=1  
+
+---
+
+## 📊 GitHub Performance Analytics
+
+<p align="center">
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=satvik078&show_icons=true&theme=tokyonight&hide_border=true"/>
+<img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=satvik078&theme=tokyonight&hide_border=true"/>
+</p>
+
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=satvik078&layout=compact&theme=tokyonight&hide_border=true"/>
+</p>
+
+---
+
+## 🏆 Achievements & Highlights
+
+- NCC Cadet (C Certificate – Alpha Grade)  
+- Gold Medalist in Basketball & Tug-of-War (Combatica)  
+- Completed multiple AI, Data Analytics & Cybersecurity industry internships  
+- Actively building research-oriented AI projects  
+
+---
+
+## 🐍 Contribution Activity
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake-dark.svg"/>
+</p>
+
+---
+
+## 📈 Profile Reach
+
+<p align="center">
+<img src="https://komarev.com/ghpvc/?username=satvik078&label=Profile%20Visitors&color=00F7FF&style=for-the-badge"/>
+</p>
+
+---
+
+## 🌐 Connect With Me
+
+<p align="center">
+<a href="mailto:satvikpandey078@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="https://linkedin.com/in/satvik-pandey-1b57aa2b3"><img src="https://img.shields.io/badge/LinkedIn-2962FF?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<a href="https://instagram.com/Satvik_Pandey_10_02"><img src="https://img.shields.io/badge/Instagram-D500F9?style=for-the-badge&logo=instagram&logoColor=white"/></a>
+</p>
+
+---
+
+⭐ **“Designing intelligent systems that shape the autonomous future.”**
