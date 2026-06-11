@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Satvik — Full Stack & AI/ML Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #FFFFFF;
+    --off-white: #F8F7F4;
+    --ink: #141414;
+    --ink-soft: #3D3D3D;
+    --ink-muted: #7A7A7A;
+    --border: #E4E2DC;
+    --accent: #1A56DB;
+    --accent-light: #EEF3FF;
+    --accent-2: #0E9E6E;
+    --tag-bg: #F0F0ED;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.05);
+    --card-shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.09);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent);
+    color: #fff !important;
+    padding: 7px 18px;
+    border-radius: 6px;
+    transition: opacity 0.2s !important;
+  }
+  .nav-cta:hover { opacity: 0.87; }
+
+  /* HERO */
+  .hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 100px 40px 80px;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    letter-spacing: 0.04em;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.8rem, 6vw, 4.4rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 1.125rem;
+    color: var(--ink-soft);
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 40px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 0.925rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.18s, box-shadow 0.18s;
+    box-shadow: 0 2px 8px rgba(26,86,219,0.25);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(26,86,219,0.35); }
+  .btn-secondary {
+    border: 1.5px solid var(--border);
+    color: var(--ink-soft);
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 0.925rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: border-color 0.18s, color 0.18s;
+    background: var(--white);
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* STATS STRIP */
+  .stats {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--off-white);
+    padding: 28px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    flex-wrap: wrap;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    margin-top: 4px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  /* SECTION WRAPPER */
+  .section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 4px;
+  }
+
+  /* SKILLS */
+  .skills-bg { background: var(--off-white); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .skill-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .skill-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-3px); }
+  .skill-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    font-size: 1.2rem;
+  }
+  .skill-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    font-family: 'DM Mono', monospace;
+  }
+  .skill-card h3 {
+    font-size: 0.975rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 0.75rem;
+    background: var(--tag-bg);
+    color: var(--ink-soft);
+    padding: 3px 9px;
+    border-radius: 100px;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    transition: box-shadow 0.22s, transform 0.22s;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .project-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-4px); }
+  .project-card:hover::before { transform: scaleX(1); }
+  .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .project-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+  }
+  .project-badge {
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: var(--accent-light);
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .project-badge.ml { background: #ECFDF5; color: #0E9E6E; }
+  .project-badge.fullstack { background: #FFF7ED; color: #C2610C; }
+  .project-badge.cv { background: #FDF4FF; color: #8B44B3; }
+  .project-badge.web { background: #F0FDF4; color: #166534; }
+  .project-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .project-card p {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    flex: 1;
+  }
+  .project-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 4px;
+    transition: gap 0.18s;
+  }
+  .project-link:hover { gap: 10px; }
+
+  /* FEATURED PROJECT */
+  .project-card.featured {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 32px;
+    padding: 36px;
+  }
+  .project-card.featured::before { background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+  .featured-content { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+  .featured-visual {
+    width: 220px;
+    flex-shrink: 0;
+    background: var(--accent-light);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 24px;
+    font-size: 2.8rem;
+  }
+  .featured-visual .mini-label {
+    font-size: 0.75rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--accent);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* ABOUT */
+  .about-bg { background: var(--off-white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-highlights { display: flex; flex-direction: column; gap: 16px; }
+  .highlight-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .highlight-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .highlight-item h4 { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .highlight-item p { font-size: 0.825rem; color: var(--ink-muted); line-height: 1.5; }
+
+  /* CONTACT */
+  .contact-wrap {
+    background: var(--ink);
+    color: var(--white);
+    padding: 80px 40px;
+    text-align: center;
+  }
+  .contact-wrap .section-title { color: var(--white); }
+  .contact-sub { font-size: 1rem; color: rgba(255,255,255,0.6); margin: 16px auto 40px; max-width: 440px; line-height: 1.7; }
+  .contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.18s, opacity 0.18s;
+    border: 1.5px solid rgba(255,255,255,0.15);
+    color: var(--white);
+    background: rgba(255,255,255,0.07);
+  }
+  .contact-link:hover { transform: translateY(-2px); opacity: 0.85; }
+  .contact-link.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .contact-link svg { width: 17px; height: 17px; }
+
+  /* FOOTER */
+  footer {
+    padding: 24px 40px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: var(--border); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 64px 20px 56px; }
+    .stats { padding: 24px 20px; gap: 32px; }
+    .section { padding: 56px 20px; }
+    .project-card.featured { flex-direction: column; }
+    .featured-visual { width: 100%; height: 120px; flex-direction: row; font-size: 2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .contact-wrap { padding: 56px 20px; }
+  }
+
+  /* SCROLL ANIMATION */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Satvik<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Available for opportunities</div>
+  <h1>Building <em>intelligent</em><br>systems that matter.</h1>
+  <p class="hero-sub">I'm Satvik — a Full Stack & AI/ML developer who bridges the gap between smart models and production-ready products. From deepfake detection to RAG pipelines, I build things that work.</p>
+  <div class="hero-actions">
+    <a href="#projects" class="btn-primary">View my work →</a>
+    <a href="https://github.com/satvik078" target="_blank" class="btn-secondary">GitHub Profile</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item">
+    <div class="stat-num">7+</div>
+    <div class="stat-label">Projects shipped</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">4</div>
+    <div class="stat-label">AI/ML systems built</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">3</div>
+    <div class="stat-label">Full-stack apps</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">10+</div>
+    <div class="stat-label">Technologies used</div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="skills-bg">
+<section class="section" id="skills">
+  <div class="section-header">
+    <h2 class="section-title">Skills & Stack</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid reveal">
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <div class="skill-category">AI / ML</div>
+      <h3>Machine Learning</h3>
+      <div class="skill-tags">
+        <span class="tag">PyTorch</span>
+        <span class="tag">HuggingFace</span>
+        <span class="tag">ViT</span>
+        <span class="tag">BERT</span>
+        <span class="tag">TinyLlama</span>
+        <span class="tag">LoRA</span>
+        <span class="tag">MTCNN</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔗</div>
+      <div class="skill-category">AI / LLM</div>
+      <h3>LLM & RAG Systems</h3>
+      <div class="skill-tags">
+        <span class="tag">LangChain</span>
+        <span class="tag">OpenAI</span>
+        <span class="tag">Qwen</span>
+        <span class="tag">pgvector</span>
+        <span class="tag">Supabase</span>
+        <span class="tag">sentence-transformers</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">⚛️</div>
+      <div class="skill-category">Frontend</div>
+      <h3>UI Development</h3>
+      <div class="skill-tags">
+        <span class="tag">React 19</span>
+        <span class="tag">Tailwind CSS</span>
+        <span class="tag">HTML/CSS/JS</span>
+        <span class="tag">Vite</span>
+        <span class="tag">Streamlit</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🛠️</div>
+      <div class="skill-category">Backend</div>
+      <h3>Server & APIs</h3>
+      <div class="skill-tags">
+        <span class="tag">Flask</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Express.js</span>
+        <span class="tag">SQLAlchemy</span>
+        <span class="tag">JWT Auth</span>
+        <span class="tag">PHP</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🗄️</div>
+      <div class="skill-category">Data & DB</div>
+      <h3>Databases</h3>
+      <div class="skill-tags">
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">NumPy</span>
+        <span class="tag">Plotly</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">👁️</div>
+      <div class="skill-category">Computer Vision</div>
+      <h3>Vision Systems</h3>
+      <div class="skill-tags">
+        <span class="tag">OpenCV</span>
+        <span class="tag">Haarcascade</span>
+        <span class="tag">Optical Flow</span>
+        <span class="tag">OCR / Tesseract</span>
+        <span class="tag">Python</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">☁️</div>
+      <div class="skill-category">Infrastructure</div>
+      <h3>Deployment & DevOps</h3>
+      <div class="skill-tags">
+        <span class="tag">Render</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">Cloudinary</span>
+        <span class="tag">MongoDB Atlas</span>
+        <span class="tag">SafeTensors</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="section-header">
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+
+    <!-- FEATURED -->
+    <div class="project-card featured reveal">
+      <div class="featured-content">
+        <div class="project-top">
+          <span class="project-badge ml">AI / ML</span>
+        </div>
+        <h3>DeepShield AI — Deepfake Detection System</h3>
+        <p>A full-stack deepfake detection system powered by Vision Transformer (ViT-Base/16) with attention-based explainability heatmaps. Uses MTCNN for face detection with Haarcascade fallback, and Attention Rollout for visual explainability — helping users understand <em>why</em> a video is flagged as manipulated.</p>
+        <div class="project-stack">
+          <span class="tag">ViT-Base/16</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">HuggingFace</span>
+          <span class="tag">MTCNN</span>
+          <span class="tag">Flask</span>
+          <span class="tag">SQLAlchemy</span>
+          <span class="tag">PostgreSQL</span>
+        </div>
+        <a href="https://github.com/satvik078" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+      <div class="featured-visual">
+        🛡️
+        <div class="mini-label">Vision Transformer<br>+ Explainability</div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card reveal">
+      <div class="project-top">
+        <div class="project-icon" style="background:#ECFDF5;">🔍</div>
+        <span class="project-badge ml">AI / NLP</span>
+      </div>
+      <h3>Customer Feedback Sentiment Analysis</h3>
+      <p>Production-ready AI platform using BERT to classify customer reviews as Positive or Negative with confidence scores. Supports manual text, CSV upload, and real-time API-based review fetching with a premium analytics dashboard.</p>
+      <div class="project-stack">
+        <span class="tag">BERT</span>
+        <span class="tag">HuggingFace</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">Plotly</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Render</span>
+      </div>
+      <a href="https://github.com/satvik078" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card reveal">
+      <div class="project-top">
+        <div class="project-icon" style="background:#EEF3FF;">📄</div>
+        <span class="project-badge">RAG / LLM</span>
+      </div>
+      <h3>RAGify — Chat with Your Documents</h3>
+      <p>A Retrieval-Augmented Generation system that lets users upload PDFs and ask natural language questions. Retrieves relevant context from a vector database and generates accurate answers with source citations using GPT-4o-mini or Qwen.</p>
+      <div class="project-stack">
+        <span class="tag">LangChain</span>
+        <span class="tag">OpenAI</span>
+        <span class="tag">Qwen</span>
+        <span class="tag">pgvector</span>
+        <span class="tag">Supabase</span>
+        <span class="tag">PyPDF</span>
+      </div>
+      <a href="https://github.com/satvik078" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="project-card reveal">
+      <div class="project-top">
+        <div class="project-icon" style="background:#FDF4FF;">🦙</div>
+        <span class="project-badge ml">Fine-tuned LLM</span>
+      </div>
+      <h3>Wildlife Drone Surveillance LLM Chatbot</h3>
+      <p>A domain-specific AI chatbot built by fine-tuning TinyLlama-1.1B-Chat on a custom dataset from a Wildlife Surveillance Autonomous Drone System project report, using LoRA for efficient parameter training.</p>
+      <div class="project-stack">
+        <span class="tag">TinyLlama-1.1B</span>
+        <span class="tag">LoRA</span>
+        <span class="tag">HuggingFace</span>
+        <span class="tag">Fine-tuning</span>
+      </div>
+      <a href="https://github.com/satvik078" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <!-- PROJECT 5 -->
+    <div class="project-card reveal">
+      <div class="project-top">
+        <div class="project-icon" style="background:#FFF7ED;">🎨</div>
+        <span class="project-badge fullstack">Full Stack</span>
+      </div>
+      <h3>ChitraArtist — Art Portfolio Platform</h3>
+      <p>A modern full-stack platform for artists to create, manage, and showcase portfolios. Features AI-powered artwork evaluation and weekly competitive leaderboards to drive community engagement.</p>
+      <div class="project-stack">
+        <span class="tag">React 19</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">Cloudinary</span>
+        <span class="tag">Tailwind CSS</span>
+        <span class="tag">Vercel</span>
+      </div>
+      <a href="https://github.com/satvik078" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <!-- PROJECT 6 -->
+    <div class="project-card reveal">
+      <div class="project-top">
+        <div class="project-icon" style="background:#FDF4FF;">🚗</div>
+        <span class="project-badge cv">Computer Vision</span>
+      </div>
+      <h3>Automatic Number Plate Detection System</h3>
+      <p>Python-based system to detect Indian HSRP number plates and estimate vehicle speed using Optical Flow algorithms. Uses OCR to extract vehicle numbers from frames with computer vision techniques.</p>
+      <div class="project-stack">
+        <span class="tag">OpenCV</span>
+        <span class="tag">pytesseract</span>
+        <span class="tag">Optical Flow</span>
+        <span class="tag">NumPy</span>
+        <span class="tag">Python</span>
+      </div>
+      <a href="https://github.com/satvik078" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <!-- PROJECT 7 -->
+    <div class="project-card reveal">
+      <div class="project-top">
+        <div class="project-icon" style="background:#F0FDF4;">📚</div>
+        <span class="project-badge web">Web Platform</span>
+      </div>
+      <h3>College Notes — CU Jammu</h3>
+      <p>A web platform for engineering students of Central University of Jammu to access lecture notes, assignments, and semester-wise study material for CSE and ECE streams in one place.</p>
+      <div class="project-stack">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">PHP</span>
+      </div>
+      <a href="https://github.com/satvik078" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<div class="about-bg">
+<section class="section" id="about">
+  <div class="section-header">
+    <h2 class="section-title">About Me</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>I'm a Full Stack and AI/ML developer with a strong focus on building systems that are both intelligent and production-ready. I enjoy working at the intersection of deep learning research and real-world engineering — turning complex models into usable products.</p>
+      <p>My work spans deepfake detection, document intelligence, sentiment analysis, fine-tuned LLMs, and computer vision — always with an eye toward clean architecture and explainability.</p>
+      <p>I'm currently a CSE student at Central University of Jammu, continuously expanding my knowledge across the AI/ML and full-stack landscape.</p>
+    </div>
+    <div class="about-highlights">
+      <div class="highlight-item">
+        <div class="highlight-dot"></div>
+        <div>
+          <h4>Transformer-first mindset</h4>
+          <p>From ViT for image classification to BERT for NLP — I build with modern transformer architectures as the foundation.</p>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-dot" style="background:var(--accent-2);"></div>
+        <div>
+          <h4>End-to-end thinking</h4>
+          <p>I design systems from model training to deployment — covering backends, frontends, databases, and cloud hosting.</p>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-dot" style="background:#8B44B3;"></div>
+        <div>
+          <h4>Explainability matters</h4>
+          <p>I integrate attention heatmaps and confidence scores so that predictions can be trusted and understood.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-wrap" id="contact">
+  <h2 class="section-title">Let's work together</h2>
+  <p class="contact-sub">Open to internships, collaborations, or just a good conversation about AI/ML and software. Feel free to reach out.</p>
+  <div class="contact-links">
+    <a href="mailto:satvikpandey078@gmail.com" class="contact-link primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      satvikpandey078@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/satvik-pandey-1b57aa2b3/" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/satvik078" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+    <a href="https://www.instagram.com/satvik_pandey_10_02/" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+      Instagram
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>Designed & built by <a href="https://github.com/satvik078">Satvik</a> · 2025</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
